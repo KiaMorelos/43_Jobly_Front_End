@@ -1,17 +1,24 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './Home';
+import Home from './home/Home';
+import AllCompanies from './companies/AllCompanies';
+import AllJobs from './jobs/AllJobs';
+import LoginForm from './forms/LoginForm';
+import SignupForm from './forms/SignUpForm';
+import ProfileForm from './forms/ProfileForm';
+import CompanyDetails from './companies/CompanyDetails';
+
 
 function AppRoutes() {
     return (
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/companies" element={<Home/>} />
-                <Route path="/companies/:company" element={<Home/>} />
-                <Route path="/jobs" element={<Home/>} />
-                <Route path="/login" element={<Home/>} />
-                <Route path="/signup" element={<Home/>} />
-                <Route path="/profile" element={<Home/>} />
+                <Route path="/companies" element={<AllCompanies />} />
+                <Route path="/companies/:company" element={<CompanyDetails/>} />
+                <Route path="/jobs" element={<AllJobs />} />
+                <Route path="/login" element={<LoginForm/>} />
+                <Route path="/signup" element={<SignupForm/>} />
+                <Route path="/profile" element={<ProfileForm/>} />
             </Routes>
     )
 }
