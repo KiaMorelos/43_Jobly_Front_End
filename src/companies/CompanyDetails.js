@@ -21,7 +21,6 @@ function CompanyDetails() {
   if (!company) return <Loader />;
 
   const { name, description, numEmployees, jobs } = company;
-  console.log(company.name);
   return (
     <div className="CompanyBlock">
       <h1>{name}</h1>

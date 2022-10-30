@@ -1,12 +1,37 @@
-function SearchForm() {
+import { useState } from "react";
+
+function SearchForm({ searchFunc, usedSearch }) {
+  const [searchData, setSearchData] = useState({
+    search: "",
+  });
+
+  const handleChange = (evt) => {
+    const { name, value } = evt.target;
+    setSearchData((searchData) => ({
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const { search } = searchData;
+    searchFunc(search);
+    setSearchData({ search: "" });
+  };
+
   return (
-    <div>
-      <form>
+    <div className="search">
+      <form onSubmit={handleSubmit}>
         <div>
-          <label>search</label>
-          <input type="text" name="search" />
+          <label htmlFor="Search">Search</label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="search"
+            value={searchData.search}
+          />
         </div>
-        <button>go</button>
+        <button onClick={usedSearch}>go</button>
       </form>
     </div>
   );
