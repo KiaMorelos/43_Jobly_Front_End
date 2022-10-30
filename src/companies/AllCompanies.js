@@ -37,7 +37,7 @@ function AllCompanies() {
       )}
 
       {!companies.length ? (
-        <p>Sorry, there are no results for that</p>
+        <p>Sorry, there are no companies that match</p>
       ) : (
         <CompanyListItems companies={companies} />
       )}

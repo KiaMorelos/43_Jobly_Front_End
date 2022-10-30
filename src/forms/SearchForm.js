@@ -16,6 +16,7 @@ function SearchForm({ searchFunc, usedSearch }) {
     evt.preventDefault();
     const { search } = searchData;
     searchFunc(search);
+    usedSearch();
     setSearchData({ search: "" });
   };
 
@@ -31,7 +32,7 @@ function SearchForm({ searchFunc, usedSearch }) {
             value={searchData.search}
           />
         </div>
-        <button onClick={usedSearch}>go</button>
+        <button>go</button>
       </form>
     </div>
   );
