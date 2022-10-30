@@ -31,9 +31,7 @@ function AllCompanies() {
       <SearchForm searchFunc={search} usedSearch={usedSearch} />
       <h1>Companies</h1>
       {!usedSearchbox ? null : (
-        <a href="#" onClick={() => resetSearch()}>
-          Reset Search
-        </a>
+        <button onClick={() => resetSearch()}>Reset Search</button>
       )}
 
       {!companies.length ? (
