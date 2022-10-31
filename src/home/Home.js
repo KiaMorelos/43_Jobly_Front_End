@@ -1,7 +1,20 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import AuthedUserContext from "../AuthedUserContext";
 function Home() {
-    return (
-        <h1>THE HOMEPAGE FOR JOBLY</h1>
-    )
+  const { currentUser } = useContext(AuthedUserContext);
+  return (
+    <>
+      <h1>The place to find jobs</h1>
+      <div>
+        {currentUser ? (
+          <h2>Welcome {currentUser.firstName}!</h2>
+        ) : (
+          <Link>Sign Up</Link>
+        )}
+      </div>
+    </>
+  );
 }
 
 export default Home;

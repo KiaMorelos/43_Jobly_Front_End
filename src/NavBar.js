@@ -1,17 +1,30 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import AuthedUserContext from "./AuthedUserContext";
 
-function NavBar(){
-    return(
-        <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/companies">Companies</NavLink>
-            <NavLink to="/jobs">Jobs</NavLink>
-            <NavLink to="/profile">Profile</NavLink>
+function NavBar({ logout }) {
+  const { currentUser } = useContext(AuthedUserContext);
 
-            <NavLink to="/login">Login</NavLink>
-            <NavLink to="/signup">Sign Up</NavLink>
-        </nav>
-    )
+  return (
+    <nav>
+      <NavLink to="/">Jobly</NavLink>
+      {currentUser ? (
+        <>
+          <NavLink to="/companies">Companies</NavLink>
+          <NavLink to="/jobs">Jobs</NavLink>
+          <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/" onClick={logout}>
+            Logout {currentUser.firstName}
+          </NavLink>
+        </>
+      ) : (
+        <>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/signup">Sign Up</NavLink>
+        </>
+      )}
+    </nav>
+  );
 }
 
 export default NavBar;

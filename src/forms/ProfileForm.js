@@ -1,7 +1,7 @@
 function ProfileForm() {
   return (
     <div>
-      <h1>Edit Profile Component</h1>
+      <h1>Edit Profile</h1>
       <form>
         <div>
           <label>username</label>
@@ -15,6 +15,7 @@ function ProfileForm() {
           <label>password</label>
           <input type="password" name="password" />
         </div>
+        <button>Confirm Changes</button>
       </form>
     </div>
   );

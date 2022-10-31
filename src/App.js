@@ -1,16 +1,70 @@
-import { BrowserRouter } from 'react-router-dom';
-import './App.css';
-import AppRoutes from './AppRoutes';
-import NavBar from './NavBar';
+import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { decodeToken } from "react-jwt";
+import JoblyApi from "./api/api";
+import "./App.css";
+import AppRoutes from "./AppRoutes";
+import NavBar from "./NavBar";
+import AuthedUserContext from "./AuthedUserContext";
 
 function App() {
+  const [token, setToken] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  async function login(username, password) {
+    try {
+      const response = await JoblyApi.login(username, password);
+      setToken(response);
+      return { message: "login succeeded" };
+    } catch (err) {
+      return { message: "login failed!", err };
+    }
+  }
+
+  async function signup(data) {
+    try {
+      const response = await JoblyApi.signup(data);
+      setToken(response);
+      return { message: "signup succeeded" };
+    } catch (err) {
+      return { message: "signup failed!", err };
+    }
+  }
+
+  const logout = () => {
+    setToken(null);
+    setCurrentUser(null);
+  };
+
+  useEffect(
+    function findUser() {
+      async function getCurrentUser() {
+        if (token) {
+          try {
+            const { username } = decodeToken(token);
+            JoblyApi.token = token;
+            const response = await JoblyApi.getCurrentUser(username);
+            setCurrentUser(response);
+          } catch (err) {
+            setCurrentUser(null);
+            return { message: "unauthorized" };
+          }
+        }
+      }
+      getCurrentUser();
+    },
+    [token]
+  );
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <AppRoutes />
-      </BrowserRouter>
-    </div>
+    <AuthedUserContext.Provider value={{ currentUser }}>
+      <div className="App">
+        <BrowserRouter>
+          <NavBar logout={logout} />
+          <AppRoutes login={login} signup={signup} />
+        </BrowserRouter>
+      </div>
+    </AuthedUserContext.Provider>
   );
 }
 
