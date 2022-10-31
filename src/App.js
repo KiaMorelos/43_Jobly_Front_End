@@ -6,9 +6,10 @@ import "./App.css";
 import AppRoutes from "./AppRoutes";
 import NavBar from "./NavBar";
 import AuthedUserContext from "./AuthedUserContext";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useLocalStorage("token");
   const [currentUser, setCurrentUser] = useState(null);
 
   async function login(username, password) {
@@ -61,7 +62,7 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <NavBar logout={logout} />
-          <AppRoutes login={login} signup={signup} />
+          <AppRoutes login={login} signup={signup} currentUser={currentUser} />
         </BrowserRouter>
       </div>
     </AuthedUserContext.Provider>

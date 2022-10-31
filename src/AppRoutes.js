@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
+import ProtectedRoute from "./ProtectedRoute";
 import Home from "./home/Home";
 import AllCompanies from "./companies/AllCompanies";
 import AllJobs from "./jobs/AllJobs";
@@ -12,12 +13,14 @@ function AppRoutes({ login, signup }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/companies" element={<AllCompanies />} />
-      <Route path="/companies/:companyHandle" element={<CompanyDetails />} />
-      <Route path="/jobs" element={<AllJobs />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/companies" element={<AllCompanies />} />
+        <Route path="/companies/:companyHandle" element={<CompanyDetails />} />
+        <Route path="/jobs" element={<AllJobs />} />
+        <Route path="/profile" element={<ProfileForm />} />
+      </Route>
       <Route path="/login" element={<LoginForm login={login} />} />
       <Route path="/signup" element={<SignupForm signup={signup} />} />
-      <Route path="/profile" element={<ProfileForm />} />
     </Routes>
   );
 }
