@@ -20,7 +20,9 @@ function LoginForm({ login }) {
     evt.preventDefault();
     const { username, password } = formData;
     const status = await login(username, password);
-    navigate("/companies");
+    setTimeout(() => {
+      navigate("/companies");
+    }, 500);
 
     setFormData({ username: "", password: "" });
   };
