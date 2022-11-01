@@ -58,7 +58,7 @@ function App() {
   );
 
   return (
-    <AuthedUserContext.Provider value={{ currentUser }}>
+    <AuthedUserContext.Provider value={{ currentUser, setCurrentUser }}>
       <div className="App">
         <BrowserRouter>
           <NavBar logout={logout} />
