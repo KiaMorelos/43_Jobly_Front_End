@@ -3,9 +3,9 @@ import { BrowserRouter } from "react-router-dom";
 import { decodeToken } from "react-jwt";
 import JoblyApi from "./api/api";
 import "./App.css";
-import AppRoutes from "./AppRoutes";
-import NavBar from "./NavBar";
-import AuthedUserContext from "./AuthedUserContext";
+import AppRoutes from "./routes/AppRoutes";
+import NavBar from "./components/navbar/NavBar";
+import AuthedUserContext from "./components/context/AuthedUserContext";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
     try {
       const response = await JoblyApi.login(username, password);
       setToken(response);
-      return { message: "login succeeded" };
+      return { message: "success" };
     } catch (err) {
-      return { message: "login failed!", err };
+      return { message: "failed!", err };
     }
   }
 
@@ -27,9 +27,9 @@ function App() {
     try {
       const response = await JoblyApi.signup(data);
       setToken(response);
-      return { message: "signup succeeded" };
+      return { message: "success" };
     } catch (err) {
-      return { message: "signup failed!", err };
+      return { message: "failed!", err };
     }
   }
 

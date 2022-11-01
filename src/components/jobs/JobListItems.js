@@ -1,5 +1,6 @@
-import AuthedUserContext from "../AuthedUserContext";
+import AuthedUserContext from "../context/AuthedUserContext";
 import { useContext, useState, useEffect } from "react";
+import "./JobListItems.css";
 
 function JobListItems({ id, title, companyName, salary, equity }) {
   const { didUserAlreadyApply, applyToJob } = useContext(AuthedUserContext);
@@ -25,7 +26,7 @@ function JobListItems({ id, title, companyName, salary, equity }) {
         Salary: {salary} | Equity: {equity}
       </p>
       {applied ? (
-        <button>Applied!</button>
+        <button className="disabled">Applied!</button>
       ) : (
         <button onClick={apply}>Apply</button>
       )}

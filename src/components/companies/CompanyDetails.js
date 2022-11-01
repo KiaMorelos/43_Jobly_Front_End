@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import JoblyApi from "../api/api";
+import JoblyApi from "../../api/api";
 import JobListItems from "../jobs/JobListItems";
-import Loader from "../Loader";
+import Loader from "../loader/Loader";
 
 function CompanyDetails() {
   const { companyHandle } = useParams();

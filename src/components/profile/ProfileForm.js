@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import JoblyApi from "../api/api";
-import AuthedUserContext from "../AuthedUserContext";
+import JoblyApi from "../../api/api";
+import AuthedUserContext from "../context/AuthedUserContext";
 
 function ProfileForm() {
   const navigate = useNavigate();

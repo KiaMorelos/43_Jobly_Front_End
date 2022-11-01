@@ -1,0 +1,33 @@
+nav {
+    background-color: pink;
+    padding: 2%;
+}
+
+a {
+    padding: 0 1%;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+}
+
+a:visited {
+    color: #333;
+}
+
+a.active {
+    padding-bottom: 1%;
+    color: royalblue;
+}
+
+a.dontShowActive {
+    color: #333;
+    border: none;
+}
+
+a:hover {
+    color: royalblue;
+}
+
+a.site-name {
+    padding-right: 50%;
+}

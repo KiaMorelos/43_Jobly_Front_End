@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import JoblyAPI from "../api/api";
-import SearchForm from "../forms/SearchForm";
+import JoblyAPI from "../../api/api";
+import SearchForm from "../search/SearchForm";
 import JobListItems from "./JobListItems";
-import Loader from "../Loader";
+import Loader from "../loader/Loader";
 
 function AllJobs() {
   const [jobs, setJobs] = useState(null);
@@ -23,8 +23,6 @@ function AllJobs() {
     setUsedSearchBox(false);
     search();
   };
-
-  console.log(jobs);
 
   if (!jobs) return <Loader />;
 

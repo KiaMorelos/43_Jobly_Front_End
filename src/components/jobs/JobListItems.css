@@ -1,0 +1,25 @@
+.JobBlock {
+    border-radius: 40px;
+    border: 1px solid lightblue;
+    padding: 0;
+    margin: 1% auto;
+    width: 80%;
+    text-align: left;
+    padding: 2% 5%;
+}
+
+button {
+    border: none;
+    background-color: royalblue;
+    color: white;
+    font-weight: 900;
+    padding: 1%;
+    border-radius: 60px;
+    width: 10%;
+
+}
+
+button.disabled {
+    background-color: pink;
+    color: #222;
+}

@@ -1,0 +1,9 @@
+.CompanyBlock {
+    background-color: #efefef;
+    border-radius: 40px;
+    padding: 0;
+    margin: 1% auto;
+    width: 80%;
+    text-align: left;
+    padding: 2% 5%;
+}

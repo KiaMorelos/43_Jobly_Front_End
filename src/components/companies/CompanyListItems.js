@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "./CompanyListItems.css";
 function CompanyListItems({ companies }) {
   const company = companies.map((co) => (
     <div key={co.handle} className="CompanyBlock">

@@ -23,7 +23,9 @@ function SignupForm({ signup }) {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     const status = await signup(formData);
-    navigate("/companies");
+    if (status.message === "succcess") {
+      navigate("/companies");
+    }
     setFormData({
       username: "",
       firstName: "",
