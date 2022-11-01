@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import ProtectedRoutes from "../components/protectedRoute/ProtectedRoutes";
+import ProtectedRoutes from "../components/protectedRoutes/ProtectedRoutes";
 import Home from ".././components/home/Home";
 import AllCompanies from ".././components/companies/AllCompanies";
 import AllJobs from ".././components/jobs/AllJobs";

@@ -20,9 +20,7 @@ function LoginForm({ login }) {
     evt.preventDefault();
     const { username, password } = formData;
     const status = await login(username, password);
-    if (status.message === "succcess") {
-      navigate("/companies");
-    }
+    navigate("/companies");
 
     setFormData({ username: "", password: "" });
   };
