@@ -38,7 +38,16 @@ function AllJobs() {
       {!jobs.length ? (
         <p>Sorry, there are no jobs that match your search</p>
       ) : (
-        <JobListItems jobs={jobs} />
+        jobs.map((job) => (
+          <JobListItems
+            key={job.id}
+            id={job.id}
+            title={job.title}
+            salary={job.salary}
+            equity={job.equity}
+            companyName={job.companyName}
+          />
+        ))
       )}
     </div>
   );

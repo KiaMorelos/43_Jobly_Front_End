@@ -11,6 +11,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 function App() {
   const [token, setToken] = useLocalStorage("token");
   const [currentUser, setCurrentUser] = useState(null);
+  const [appliedJobIds, setAppliedJobIds] = useState(new Set([]));
 
   async function login(username, password) {
     try {
@@ -57,8 +58,20 @@ function App() {
     [token]
   );
 
+  function didUserAlreadyApply(id) {
+    return appliedJobIds.has(id);
+  }
+
+  function applyToJob(id) {
+    if (didUserAlreadyApply(id)) return;
+    JoblyApi.applyToJob(currentUser.username, id);
+    setAppliedJobIds(new Set([...appliedJobIds, id]));
+  }
+
   return (
-    <AuthedUserContext.Provider value={{ currentUser, setCurrentUser }}>
+    <AuthedUserContext.Provider
+      value={{ currentUser, setCurrentUser, didUserAlreadyApply, applyToJob }}
+    >
       <div className="App">
         <BrowserRouter>
           <NavBar logout={logout} />

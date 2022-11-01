@@ -32,7 +32,16 @@ function CompanyDetails() {
       </div>
       <div>
         <h2>Available Jobs at {name}</h2>
-        <JobListItems jobs={jobs} />
+        {jobs.map((job) => (
+          <JobListItems
+            key={job.id}
+            id={job.id}
+            title={job.title}
+            salary={job.salary}
+            equity={job.equity}
+            companyName={job.companyName}
+          />
+        ))}
       </div>
     </div>
   );

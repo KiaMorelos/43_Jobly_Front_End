@@ -82,6 +82,12 @@ class JoblyApi {
     let res = await this.request(`users/${username}`, formData, "patch");
     return res.user;
   }
+
+  /** apply to job */
+
+  static async applyToJob(username, jobId) {
+    await this.request(`users/${username}/jobs/${jobId}`, {}, "post");
+  }
 }
 
 export default JoblyApi;
