@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import JoblyApi from "../../api/api";
 import AuthedUserContext from "../context/AuthedUserContext";
+import FlashMessage from "../flash_message/FlashMessage";
 import "./ProfileForm.css";
 function ProfileForm() {
-  const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(AuthedUserContext);
+  const [msg, setMsg] = useState(null);
+  const [statusCode, setStatusCode] = useState(null);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -28,22 +29,22 @@ function ProfileForm() {
     try {
       const updatedUser = await JoblyApi.updateUserInfo(username, formData);
       setCurrentUser(updatedUser);
+      setStatusCode("success");
+      setMsg("Successfully updated profile!");
+      setTimeout(() => {
+        setMsg(null);
+      }, 3000);
     } catch (err) {
-      return console.log(err);
+      setMsg(err);
+      setStatusCode("fail");
     }
-
-    navigate("/");
-
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    });
   };
   return (
     <div className="profile-form">
       <h1 className="form-heading">Edit Profile</h1>
+      {msg ? (
+        <FlashMessage statusCode={statusCode} msg={msg}></FlashMessage>
+      ) : null}
       <form onSubmit={handleSubmit}>
         <div>
           <label>first name</label>

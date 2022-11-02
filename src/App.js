@@ -19,7 +19,7 @@ function App() {
       setToken(response);
       return { message: "success" };
     } catch (err) {
-      return { message: "failed!", err };
+      return { message: "fail", err };
     }
   }
 
@@ -29,7 +29,7 @@ function App() {
       setToken(response);
       return { message: "success" };
     } catch (err) {
-      return { message: "failed!", err };
+      return { message: "fail", err };
     }
   }
 

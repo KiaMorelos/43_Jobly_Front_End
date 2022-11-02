@@ -1,0 +1,9 @@
+.fail {
+    color: rgb(250, 121, 140);
+    text-align: center;
+}
+
+.success {
+    color: deepskyblue;
+    text-align: center;
+}

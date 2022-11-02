@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import FlashMessage from "../flash_message/FlashMessage";
 import "./LoginSignup.css";
 function LoginForm({ login }) {
   const navigate = useNavigate();
-
+  const [flashMessage, setFlashMessage] = useState(false);
+  const [msg, setMsg] = useState(null);
+  const [statusCode, setStatusCode] = useState(null);
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -21,15 +24,25 @@ function LoginForm({ login }) {
     evt.preventDefault();
     const { username, password } = formData;
     const status = await login(username, password);
-    setTimeout(() => {
-      navigate("/companies");
-    }, 500);
+    if (status.message === "success") {
+      setTimeout(() => {
+        navigate("/companies");
+      }, 500);
+      setFlashMessage(false);
+    } else {
+      setFlashMessage(true);
+      setMsg(status.err);
+      setStatusCode(status.message);
+    }
 
     setFormData({ username: "", password: "" });
   };
   return (
     <div className="login-signup-form">
       <h1 className="form-heading">Login</h1>
+      {flashMessage ? (
+        <FlashMessage statusCode={statusCode} msg={msg}></FlashMessage>
+      ) : null}
       <form onSubmit={handleSubmit}>
         <div>
           <label>username</label>
