@@ -27,14 +27,18 @@ function AllJobs() {
   if (!jobs) return <Loader />;
 
   return (
-    <div>
+    <div className="full-height">
       <SearchForm searchFunc={search} usedSearch={usedSearch} />
       <h1 className="page-header">Jobs</h1>
       {!usedSearchbox ? null : (
-        <button onClick={() => resetSearch()}>Reset Search</button>
+        <button onClick={() => resetSearch()} className="reset-search">
+          Reset Search
+        </button>
       )}
       {!jobs.length ? (
-        <p>Sorry, there are no jobs that match your search</p>
+        <p className="no-results">
+          Sorry, there are no jobs that match your search
+        </p>
       ) : (
         jobs.map((job) => (
           <JobListItems

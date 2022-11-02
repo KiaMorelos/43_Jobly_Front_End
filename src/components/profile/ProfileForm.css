@@ -1,9 +1,12 @@
 .profile-form {
     height: 100vh;
+    text-align: left;
 }
 
 .profile-form label {
     color: #ccc;
+    text-align: left;
+    font-weight: 900;
 }
 
 .profile-form input,
@@ -38,5 +41,5 @@ select {
     border-radius: 5px;
     background-color: #222;
     padding: 20px;
-    width: 80%;
+    width: 50%;
 }

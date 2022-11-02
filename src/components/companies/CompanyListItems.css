@@ -3,8 +3,24 @@
     font-size: 3em;
 }
 
+.full-height {
+    height: 100vh;
+}
+
+.no-results {
+    color: pink;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.reset-search {
+    padding: 1% 3%;
+    border-radius: 0;
+    width: 20%;
+}
+
 .CompanyBlock {
-    background-color: #fff;
+    background-color: #eee;
     border-radius: 40px;
     padding: 0;
     margin: 2% auto;
@@ -24,10 +40,11 @@
 
 .CompanyDetails {
     margin: 0 auto;
-    background-color: aliceblue;
+    background-color: #282c34;
     padding: 5% 10% 2% 10%;
     width: 100%;
     text-align: left;
+    color: white;
 }
 
 .CompanyDetails h6 {
@@ -42,16 +59,18 @@
     text-align: left;
     font-weight: 100;
     font-size: 3em;
+
 }
 
 .available {
     padding: 1% 0% 0 0;
-    background-color: aliceblue;
+    background-color: #282c34;
 }
 
 .available h2 {
     font-weight: 100;
     font-size: 2em;
+    color: white;
 }
 
 .CompanyBlock:hover {

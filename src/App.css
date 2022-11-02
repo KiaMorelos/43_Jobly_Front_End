@@ -1,8 +1,13 @@
 .App {
   text-align: center;
-  background-color: #ccc;
-  background-image: url("../public/joanna-kosinska-mjC9apK53a8-unsplash.jpg");
-  background-size: contain;
+}
+
+body {
+  background-color: #282c34;
+}
+
+h1 {
+  color: white
 }
 
 

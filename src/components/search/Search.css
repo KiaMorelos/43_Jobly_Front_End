@@ -14,7 +14,7 @@ form.search input[type=text] {
     border: 1px solid #222;
     float: left;
     width: 75%;
-    background: white;
+    background: #eee;
 }
 
 form.search button {
@@ -22,8 +22,8 @@ form.search button {
     float: left;
     width: 15%;
     padding: 10px;
-    background: #222;
-    color: pink;
+    background: pink;
+    color: #222;
     font-size: 17px;
     border: 1px solid #222;
     border-left: none;

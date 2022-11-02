@@ -27,15 +27,17 @@ function AllCompanies() {
   if (!companies) return <Loader />;
 
   return (
-    <div>
+    <div className="full-height">
       <SearchForm searchFunc={search} usedSearch={usedSearch} />
       <h1 className="page-header">Companies</h1>
       {!usedSearchbox ? null : (
-        <button onClick={() => resetSearch()}>Reset Search</button>
+        <button onClick={() => resetSearch()} className="reset-search">
+          Reset Search
+        </button>
       )}
 
       {!companies.length ? (
-        <p>Sorry, there are no companies that match</p>
+        <p className="no-results">Sorry, there are no companies that match</p>
       ) : (
         <CompanyListItems companies={companies} />
       )}

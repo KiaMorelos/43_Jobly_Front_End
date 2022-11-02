@@ -1,14 +1,17 @@
 .login-signup-form {
-    height: 100vh
+    height: 100vh;
+    text-align: left;
 }
 
 .login-signup-form label {
     color: #ccc;
+    font-weight: 900;
 }
 
 .form-heading {
     font-weight: 100;
     font-size: 3em;
+    text-align: center;
 }
 
 .login-signup-form input,
