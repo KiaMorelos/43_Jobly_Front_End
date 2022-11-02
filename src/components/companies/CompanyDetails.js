@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import JoblyApi from "../../api/api";
 import JobListItems from "../jobs/JobListItems";
 import Loader from "../loader/Loader";
-
+import "./CompanyListItems.css";
 function CompanyDetails() {
   const { companyHandle } = useParams();
   const [company, setCompany] = useState(null);
@@ -24,13 +24,12 @@ function CompanyDetails() {
   const { name, description, numEmployees, jobs } = company;
   return (
     <div>
-      <div className="CompanyBlock">
+      <div className="CompanyDetails">
         <h1>{name}</h1>
         <h6>Employs: {numEmployees} employees</h6>
-        <hr />
         <p>{description}</p>
       </div>
-      <div>
+      <div className="available">
         <h2>Available Jobs at {name}</h2>
         {jobs.map((job) => (
           <JobListItems

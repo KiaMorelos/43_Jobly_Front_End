@@ -46,7 +46,9 @@ function App() {
             const { username } = decodeToken(token);
             JoblyApi.token = token;
             const response = await JoblyApi.getCurrentUser(username);
+            const { applications } = response;
             setCurrentUser(response);
+            setAppliedJobIds(new Set(applications));
           } catch (err) {
             setCurrentUser(null);
             return { message: "unauthorized" };
@@ -67,7 +69,6 @@ function App() {
     JoblyApi.applyToJob(currentUser.username, id);
     setAppliedJobIds(new Set([...appliedJobIds, id]));
   }
-
   return (
     <AuthedUserContext.Provider
       value={{ currentUser, setCurrentUser, didUserAlreadyApply, applyToJob }}

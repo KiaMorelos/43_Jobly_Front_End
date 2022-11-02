@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./Search.css";
 function SearchForm({ searchFunc, usedSearch }) {
   const [searchData, setSearchData] = useState({
     search: "",
@@ -21,13 +21,13 @@ function SearchForm({ searchFunc, usedSearch }) {
   };
 
   return (
-    <div className="search">
-      <form onSubmit={handleSubmit}>
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="search">
         <div>
-          <label htmlFor="Search">Search</label>
           <input
             onChange={handleChange}
             type="text"
+            placeholder="Search..."
             name="search"
             value={searchData.search}
           />

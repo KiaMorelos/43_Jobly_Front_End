@@ -12,8 +12,8 @@ import CompanyDetails from ".././components/companies/CompanyDetails";
 function AppRoutes({ login, signup }) {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route element={<ProtectedRoutes />}>
-        <Route path="/" element={<Home />} />
         <Route path="/companies" element={<AllCompanies />} />
         <Route path="/companies/:companyHandle" element={<CompanyDetails />} />
         <Route path="/jobs" element={<AllJobs />} />

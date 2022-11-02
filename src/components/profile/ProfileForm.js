@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import JoblyApi from "../../api/api";
 import AuthedUserContext from "../context/AuthedUserContext";
-
+import "./ProfileForm.css";
 function ProfileForm() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(AuthedUserContext);
@@ -42,8 +42,8 @@ function ProfileForm() {
     });
   };
   return (
-    <div>
-      <h1>Edit Profile</h1>
+    <div className="profile-form">
+      <h1 className="form-heading">Edit Profile</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>first name</label>

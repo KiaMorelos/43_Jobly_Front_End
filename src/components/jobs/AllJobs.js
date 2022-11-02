@@ -3,7 +3,7 @@ import JoblyAPI from "../../api/api";
 import SearchForm from "../search/SearchForm";
 import JobListItems from "./JobListItems";
 import Loader from "../loader/Loader";
-
+import "./JobListItems.css";
 function AllJobs() {
   const [jobs, setJobs] = useState(null);
   const [usedSearchbox, setUsedSearchBox] = useState(false);
@@ -29,7 +29,7 @@ function AllJobs() {
   return (
     <div>
       <SearchForm searchFunc={search} usedSearch={usedSearch} />
-      <h1>Jobs</h1>
+      <h1 className="page-header">Jobs</h1>
       {!usedSearchbox ? null : (
         <button onClick={() => resetSearch()}>Reset Search</button>
       )}

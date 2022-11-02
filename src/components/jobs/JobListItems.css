@@ -1,17 +1,31 @@
+.page-header {
+    font-weight: 100;
+    font-size: 3em;
+}
+
 .JobBlock {
+    background-color: #fff;
     border-radius: 40px;
-    border: 1px solid lightblue;
     padding: 0;
-    margin: 1% auto;
+    margin: 2% auto;
     width: 80%;
     text-align: left;
     padding: 2% 5%;
 }
 
+.JobBlock:hover {
+    scale: 1.05;
+    box-shadow: 2px 2px 5px 1px rgb(255,
+            192,
+            203);
+    transition: 1s;
+}
+
+
 button {
     border: none;
-    background-color: royalblue;
-    color: white;
+    background-color: #222;
+    color: pink;
     font-weight: 900;
     padding: 1%;
     border-radius: 60px;

@@ -1,0 +1,42 @@
+.profile-form {
+    height: 100vh;
+}
+
+.profile-form label {
+    color: #ccc;
+}
+
+.profile-form input,
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.profile-form button {
+    width: 100%;
+    background-color: pink;
+    color: #222;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-form button:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+.profile-form form {
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #222;
+    padding: 20px;
+    width: 80%;
+}

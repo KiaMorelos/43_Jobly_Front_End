@@ -5,7 +5,9 @@ function CompanyListItems({ companies }) {
     <div key={co.handle} className="CompanyBlock">
       <h2>{co.name}</h2>
       <p>{co.description}</p>
-      <Link to={`/companies/${co.handle}`}>View</Link>
+      <Link to={`/companies/${co.handle}`} className="company-view-link">
+        View
+      </Link>
     </div>
   ));
 

@@ -1,33 +1,33 @@
 nav {
-    background-color: pink;
+    background-color: #222;
     padding: 2%;
 }
 
-a {
+nav a {
     padding: 0 1%;
     text-decoration: none;
     font-weight: 900;
-    color: #333;
+    color: pink;
 }
 
-a:visited {
-    color: #333;
+nav a:visited {
+    color: pink;
 }
 
-a.active {
+nav a.active {
     padding-bottom: 1%;
-    color: royalblue;
+    color: deepskyblue;
 }
 
-a.dontShowActive {
-    color: #333;
+nav a.dontShowActive {
+    color: pink;
     border: none;
 }
 
-a:hover {
-    color: royalblue;
+nav a:hover {
+    color: deepskyblue;
 }
 
-a.site-name {
-    padding-right: 50%;
+nav a.site-name {
+    margin-right: 50%;
 }

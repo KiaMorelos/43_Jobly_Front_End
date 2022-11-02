@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./LoginSignup.css";
 function LoginForm({ login }) {
   const navigate = useNavigate();
 
@@ -27,8 +28,8 @@ function LoginForm({ login }) {
     setFormData({ username: "", password: "" });
   };
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="login-signup-form">
+      <h1 className="form-heading">Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>username</label>

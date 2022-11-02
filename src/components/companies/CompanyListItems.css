@@ -1,9 +1,77 @@
+.page-header {
+    font-weight: 100;
+    font-size: 3em;
+}
+
 .CompanyBlock {
-    background-color: #efefef;
+    background-color: #fff;
     border-radius: 40px;
     padding: 0;
-    margin: 1% auto;
+    margin: 2% auto;
     width: 80%;
     text-align: left;
-    padding: 2% 5%;
+    padding: 3% 5%;
+}
+
+.CompanyBlock h2 {
+    font-weight: 100;
+    font-size: 2em;
+}
+
+.CompanyBlock p {
+    padding: 0 0 3% 0;
+}
+
+.CompanyDetails {
+    margin: 0 auto;
+    background-color: aliceblue;
+    padding: 5% 10% 2% 10%;
+    width: 100%;
+    text-align: left;
+}
+
+.CompanyDetails h6 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.CompanyDetails h1 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-weight: 100;
+    font-size: 3em;
+}
+
+.available {
+    padding: 1% 0% 0 0;
+    background-color: aliceblue;
+}
+
+.available h2 {
+    font-weight: 100;
+    font-size: 2em;
+}
+
+.CompanyBlock:hover {
+    scale: 1.05;
+    box-shadow: 2px 2px 5px 1px rgb(255,
+            192,
+            203);
+    transition: 1s;
+}
+
+.company-view-link {
+    color: pink;
+    text-decoration: none;
+    background-color: #222;
+    padding: 1% 2%;
+    font-weight: 900;
+    border-radius: 60px;
+}
+
+.company-view-link:hover {
+    color: white;
+    background-color: deepskyblue;
 }

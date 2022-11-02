@@ -1,0 +1,47 @@
+.login-signup-form {
+    height: 100vh
+}
+
+.login-signup-form label {
+    color: #ccc;
+}
+
+.form-heading {
+    font-weight: 100;
+    font-size: 3em;
+}
+
+.login-signup-form input,
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-signup-form button {
+    width: 100%;
+    background-color: pink;
+    color: #222;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+}
+
+.login-signup-form button:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+.login-signup-form form {
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #222;
+    padding: 20px;
+    width: 50%;
+}
